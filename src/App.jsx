@@ -1,8 +1,16 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import Home from './screens/Home'
+import Header from './components/Header'
+
 function App() {
   return (
     <>
-      <h1>Jai Shree Ganesh👊</h1>
+    
+      <Header/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+      </Routes>
     </>
   )
 }

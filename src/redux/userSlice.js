@@ -8,12 +8,22 @@ const userSlice = createSlice({
             phone: '',
             email: '',
             address: '',
+            login: false,
         },
         cart: [],
         history: [],
         notification: 0,
     },
     reducers: {
+        // create profile action 
+        createProfile:(state, action)=> {
+            const { name, phone, email, address } = action.payload;
+            state.details.name = name;
+            state.details.email = email;
+            state.details.phone = phone;
+            state.details.address = address;
+            state.details.login = true;
+        },
         // edit profile action 
         editProfile: (state, action) => {
             const { name, phone, email, address } = action.payload;
