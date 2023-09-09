@@ -18,9 +18,7 @@ const Header = () => {
             </div>
             <ul className='large-screen-nav'>
                 <li><NavLink to={'/'}>Home</NavLink></li>
-                <li><NavLink to={'/wedding'}>Wedding Cakes</NavLink></li>
-                <li><NavLink to={'/birthday'}>Birthday Cakes</NavLink></li>
-                <li><NavLink to={'/special'}>Special Cakes</NavLink></li>
+                <li><NavLink to={'/cakes'}>Cakes</NavLink></li>
                 <li><NavLink to={'/cart'}>My Cart</NavLink></li>
                 <li>
                     {
@@ -29,13 +27,11 @@ const Header = () => {
                 </li>
             </ul>
             <nav className='small-screen-nav'>
-                <button><i className="fa-solid fa-bars" onClick={()=>setShow(!show)}></i></button>
-                <ul className='small-screen-navlinks' style={{display:show?"block":"none"}}>
-                    <button><i className="fa-solid fa-xmark" onClick={()=>setShow(!show)}></i></button>
+                <button><i className="fa-solid fa-bars" onClick={() => setShow(!show)}></i></button>
+                <ul className='small-screen-navlinks' style={{ display: show ? "block" : "none" }}>
+                    <button><i className="fa-solid fa-xmark" onClick={() => setShow(!show)}></i></button>
                     <li><NavLink to={'/'}>Home</NavLink></li>
-                    <li><NavLink to={'/wedding'}>Wedding Cakes</NavLink></li>
-                    <li><NavLink to={'/birthday'}>Birthday Cakes</NavLink></li>
-                    <li><NavLink to={'/special'}>Special Cakes</NavLink></li>
+                    <li><NavLink to={'/cakes'}>Cakes</NavLink></li>
                     <li><NavLink to={'/cart'}>My Cart</NavLink></li>
                     <li>
                         {

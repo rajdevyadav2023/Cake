@@ -4,8 +4,10 @@ header {
     align-items: center;
     padding: 1rem;
     position: sticky;
+    top: 0;
     box-shadow: 0px 0px 8px #4c1e1e;
     background-color: #4c1e1e;
+    z-index: 9999;
 }
 
 .logo-box {
