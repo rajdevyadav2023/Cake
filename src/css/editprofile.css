@@ -1,0 +1,56 @@
+.edit-profile{
+    padding: 2rem;
+    background-color: #692f2f69;
+    color: #692f2f;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+.edit-profile .form-control{
+    margin-top: .5rem;
+    background-color: #eee;
+    padding: 1rem;
+    border-radius: 5px;
+}
+.edit-profile input, .edit-profile textarea{
+    width: 100%;
+    padding: 10px;
+    margin-top: .3rem;
+    resize: none;
+    outline: none;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    color: #777;
+    font-size: 16px;
+}
+.edit-profile input:focus, .edit-profile textarea:focus{
+    border: 2px solid #692f2f;
+}
+.edit-profile p{
+    background-color: #692f2fb7;
+    color: #fff;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    text-align: center;
+}
+.edit-profile .btn-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.edit-profile button{
+    height: 40px;
+    padding: 0 3rem;
+    background-color: #692f2f;
+    color: #fff;
+    margin-top: 1rem;
+    outline: none;
+    border: none;
+    transition: all .5s ease;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.edit-profile button:hover, .edit-profile button:focus{
+    background-color: #4c1e1e;
+
+}

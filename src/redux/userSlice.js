@@ -4,16 +4,18 @@ const userSlice = createSlice({
     name: 'user',
     initialState: {
         details: {
-            name: '',
-            phone: '',
-            email: '',
-            address: '',
-            password:'',
-            login: false,
+            name: 'Rajdev Yadav',
+            phone: '9369005901',
+            email: 'rajdevbhai2024@gmail.com',
+            address: 'Noida Sector 66, UP , India',
+            password:'123789',
+            login: true,
         },
         cart: [],
         history: [],
         notification: 0,
+        notificationMessage: [],
+        
     },
     reducers: {
         // create profile action 
