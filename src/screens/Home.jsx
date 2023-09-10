@@ -6,6 +6,7 @@ import { weddingCakes } from "../data/weddingCakes"
 
 
 const Home = () => {
+  document.title = "Welcome To The Cake Home ";
   return (
     <div>
         <EmblaCarousel/>

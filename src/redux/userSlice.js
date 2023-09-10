@@ -8,6 +8,7 @@ const userSlice = createSlice({
             phone: '',
             email: '',
             address: '',
+            password:'',
             login: false,
         },
         cart: [],

@@ -1,0 +1,85 @@
+.login-form {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1ff;
+}
+
+.login-form form {
+    border: 1px solid #ddd;
+    padding:2rem 1rem;
+    width: 25%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #ddd;
+    color: #692f2f;
+    /* border: 1px solid #692f2f; */
+    background-color: #fff;
+
+}
+
+.login-form h2 {
+    text-align: center;
+}
+
+.login-form .form-control {
+    padding: .5rem;
+}
+
+.login-form input {
+    height: 45px;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #692f2f;
+    border: 1px solid #aaa;
+    color: #777;
+    font-size: 14px;
+    transition: all .5s ease;
+    margin-top: .3rem;
+}
+.login-form input:focus{
+    border: 1px solid #692f2f;
+
+}
+.login-form button {
+    width: 100%;
+    height: 45px;
+    border-radius: 3px;
+    margin-top: .5rem;
+    height: 45px;
+    cursor: pointer;
+    background-color: #692f2f;
+    color: #fff;
+    border: none;
+    outline: none;
+    transition: all .5s ease;
+
+}
+.login-form button:hover, .login-form button:focus {
+    background-color: #4c1e1e;
+}
+
+/* responsiveness  */
+/* for phone screen  */
+@media (min-width:280px) and (max-width:480px) {
+    .login-form form{
+        width: 80%;
+    }
+}
+
+/* for tablet screen  */
+@media (min-width:481px) and (max-width:768px) {
+    .login-form form{
+        width: 60%;
+    }
+}
+
+/* for laptop screen  */
+@media (min-width:769px) and (max-width:1024px) {
+    .login-form form{
+        width: 40%;
+    }
+}
