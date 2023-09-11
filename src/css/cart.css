@@ -81,6 +81,7 @@
 }
 .cart-items .item{
     width: 23%;
+    min-width: 270px;
     margin: 1rem auto;
 }
 /* responsiveness for cart login message  */
@@ -96,4 +97,20 @@
       .cart  .cart-login-message{
           width: 50%;
       }
+  }
+
+  /* responsiveness for cart items  */
+  @media (min-width:270px) and (max-width:768px) {
+    .empty-cart-message{
+        display: block;
+        text-align: center;
+    }
+    .empty-cart-message h2{
+        font-size: 2rem;
+    }
+    .empty-cart-message img{
+        display: block;
+        width: 90%;
+        margin-top: 2rem;
+    }
   }

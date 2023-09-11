@@ -1,8 +1,13 @@
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import '../css/cakes-row.css'
+
+// components 
 import Cake from './Cake'
+import Carousel from 'react-multi-carousel';
+// css 
+import 'react-multi-carousel/lib/styles.css';
+import '../css/cakes-row.css';
+
 const CakesRow = ({title, cakesList}) => {
+    
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -29,7 +34,7 @@ const CakesRow = ({title, cakesList}) => {
             <Carousel responsive={responsive}>
                 {
                     cakesList.map((cake, index)=>(
-                        <Cake cakedata={cake} key={index}/>
+                        <Cake cakedata={cake}  key={index}/>
                     ))
                 }
             </Carousel>

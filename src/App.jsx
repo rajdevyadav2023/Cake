@@ -12,9 +12,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import EditProfile from './components/EditProfile';
 import ViewProfile from './components/ViewProfile';
-import Notifications from './components/Notifications';
-import History from './components/History';
-import LogOut from './components/LogOut';
+
 
 // css 
 import './App.css';
@@ -32,9 +30,6 @@ function App() {
         <Route path='/profile' element={<Profile />}>
           <Route path='view_profile' element={<ViewProfile />} />
           <Route path='edit_profile' element={<EditProfile />} />
-          <Route path='notifications' element={<Notifications />} />
-          <Route path='history' element={<History />} />
-          <Route path='logout' element={<LogOut />} />
         </Route>
       </Routes>
       <Footer />

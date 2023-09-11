@@ -30,10 +30,10 @@ const Header = () => {
                 <button><i className="fa-solid fa-bars" onClick={() => setShow(!show)}></i></button>
                 <ul className='small-screen-navlinks' style={{ display: show ? "block" : "none" }}>
                     <button><i className="fa-solid fa-xmark" onClick={() => setShow(!show)}></i></button>
-                    <li><NavLink to={'/'}>Home</NavLink></li>
-                    <li><NavLink to={'/cakes'}>Cakes</NavLink></li>
-                    <li><NavLink to={'/cart'}>My Cart</NavLink></li>
-                    <li>
+                    <li onClick={() => setShow(!show)}><NavLink to={'/'}>Home</NavLink></li>
+                    <li onClick={() => setShow(!show)}><NavLink to={'/cakes'}>Cakes</NavLink></li>
+                    <li onClick={() => setShow(!show)}><NavLink to={'/cart'}>My Cart</NavLink></li>
+                    <li onClick={() => setShow(!show)}>
                         {
                             login ? (<NavLink to={'/profile'}>My Profile</NavLink>) : (<NavLink to={'/login'}>Log In</NavLink>)
                         }

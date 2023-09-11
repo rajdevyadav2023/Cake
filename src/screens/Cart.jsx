@@ -1,16 +1,22 @@
-import { useSelector } from 'react-redux';
+// hooks 
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+// actions 
+import { removeFromCart } from '../redux/userSlice';
+// css 
 import '../css/cart.css';
+// images 
 import empty from '../img/empty.gif';
 
 
 
 
 const Cart = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const login = useSelector(state => state.user.details.login);
   const cartItems = useSelector(state => state.user.cart);
-  // console.log(login, cartItems.length)
+  // console.log(login, cartItems)
 
   document.title = "My Cart | The Cake ";
 
@@ -32,8 +38,7 @@ const Cart = () => {
                     <div className="cake-details">
                       <h3>${item.price}</h3>
                       <div className="btn-group">
-                        <button>Remove From Cart</button>
-                        <button>Buy Now</button>
+                        <button onClick={()=>dispatch(removeFromCart({id:item.id}))}>Remove From Cart</button>
                       </div>
                     </div>
                   </div>

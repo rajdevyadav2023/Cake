@@ -1,9 +1,14 @@
 // hooks 
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+// actions 
+import { editProfile } from "../redux/userSlice";
 
 // css 
 import '../css/editprofile.css'
+
 
 const EditProfile = () => {
   const {name, phone, email, address, password } = useSelector(state=>state.user.details);
@@ -14,10 +19,18 @@ const EditProfile = () => {
   const [eAddress, setEaddress] = useState(address);
   const [ePassword, setEpassword] = useState('');
 
+  const dispatch = useDispatch();
+const navigate = useNavigate();
+
   const handleSubmit = (e)=>{
     e.preventDefault();
 
-    console.log(ePassword, password);
+  if(ePassword === password){
+dispatch(editProfile({name:eName, phone:ePhone, email:eEmail, address: eAddress}));
+navigate('/')
+  } else{
+    alert('Wrong Password!');
+  }
   }
   return (
     <div className='edit-profile'>
@@ -46,8 +59,8 @@ const EditProfile = () => {
           </div>
 
           <div className="btn-group">
-            <button>Save</button>
-            <button>Exit</button>
+            <button type="submit">Save</button>
+            <button type="button" onClick={()=>navigate('/')}>Exit</button>
           </div>
         </form>
 

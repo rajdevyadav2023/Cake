@@ -1,11 +1,18 @@
 // hooks 
-import { NavLink, Outlet } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+// actions 
+import { logoutProfile } from "../redux/userSlice";
+
 // css 
 import '../css/profile.css'
 
+
 const Profile = () => {
-  const userDetails = useSelector(state=>state.user.details);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const userDetails = useSelector(state => state.user.details);
   // console.log(userDetails);
   return (
     <div className="profile">
@@ -13,9 +20,7 @@ const Profile = () => {
         <ul>
           <li><NavLink to={'view_profile'}><i className="fa-solid fa-eye"></i> <span>View Profile</span> </NavLink></li>
           <li><NavLink to={'edit_profile'}><i className="fa-solid fa-pen-to-square"></i> <span>Edit Profile</span> </NavLink></li>
-          <li><NavLink to={'notifications'}> <i className="fa-solid fa-bell"></i> <span>Notifications</span> </NavLink></li>
-          <li><NavLink to={'history'}><i className="fa-solid fa-layer-group"></i> <span>History</span> </NavLink></li>
-          <li><NavLink to={'logout'}><i className="fa-solid fa-right-to-bracket"></i> <span>Log Out</span> </NavLink></li>
+          <li className="logout-btn" onClick={() => { dispatch(logoutProfile({ login: false })); navigate('/') }}><i className="fa-solid fa-right-to-bracket"></i> <span>Log Out</span></li>
         </ul>
       </div>
       <div className="profile-content">

@@ -1,17 +1,34 @@
 import { useState } from 'react';
+// hooks 
 import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
+
+// actions
+import { loginProfile } from '../redux/userSlice';
+
+// css
 import '../css/login.css';
+
+
 const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-
+    const dispatch = useDispatch();
+    const details = useSelector(state=>state.user.details);
+    console.log(details);
   document.title = "Log In | The Cake ";
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email, password);
+        
+        if(email === details.email && password === details.password){
+            dispatch(loginProfile({login:true}));
+            navigate('/')
+        } else{
+            alert("Sorry Something Went Wrong!");
+        }
     }
     return (
         <div className='login-form'>

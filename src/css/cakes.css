@@ -29,4 +29,5 @@
 .cake-item{
     width: 23%;
     margin: 1rem auto;
+    min-width: 270px;
 }
