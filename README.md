@@ -1,8 +1,7 @@
-# React + Vite
+# The Cake
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A little effort to make login - logout based e-commorce website using reactjs and @redux/toolkit.
+Enjoy this and try this.
+Best of luck !
+Never Ever Give Up! 👊
+  - Rajdev Yadav
