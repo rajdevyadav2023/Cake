@@ -1,5 +1,7 @@
 <?php
 
+use Firebase\JWT\JWT;
+
     require_once '../function/autoload.classess.php';
 
     class Model extends Database {
@@ -24,12 +26,29 @@
 
                 }
 
-                $register = $this->connect()->prepare("INSERT INTO users ( name, email, password ) VALUES ( ?, ?, ?) ");
-                $register->execute([$name, $email, $password]);
+                include_once '../vendor/autoload.php';
+
+                $user_id = uniqid('user');
+                $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+                $secret_key = "seckey";
+
+                $register = $this->connect()->prepare("INSERT INTO users ( user_id, name, email, password, secret_key ) VALUES ( ?, ?, ?, ?, ?) ");
+                $register->execute([$user_id, $name, $email, $password_hashed, $secret_key]);
+
+                $payload = [
+                    'iss' => 'localhost',
+                    'user_data' => [
+                        'name' => $name,
+                        'email' => $email
+                    ]
+                ];
+
+                $access_token = JWT::encode($payload, $secret_key, 'HS256');
     
                 $data = [
                     'status' => 200,
-                    'message' => 'Registered Successfully!'
+                    'message' => 'Registered Successfully!',
+                    'access_token' => $access_token
                 ];
                 header("HTTP/1.0 200 Registered Successfully!");
                 echo json_encode($data);
@@ -40,32 +59,73 @@
 
         protected function Login_User ($email, $password) {
 
-            $checkData = $this->connect()->prepare("SELECT * FROM users WHERE users.email = ? AND users.password = ?");
-            $checkData->execute([$email, $password]);
-            $datas = $checkData->fetch();
+            require_once '../vendor/autoload.php';
 
-            if(!$datas) {
-                
+            $checkEmail = $this->connect()->prepare("SELECT users.email, users.password FROM users WHERE users.email = ?");
+            $checkEmail->execute([$email]);
+            $emailResult = $checkEmail->fetch();
+
+            if(!$emailResult) {
                 $data = [
                     'status' => 401,
                     'message' => 'Wrong Credentials'
                 ];
                 header("HTTP/1.0 401 Wrong Credentials");
                 echo json_encode($data);
-
                 exit();
-
             }
 
-            $data = [
-                'status' => 200,
-                'message' => 'Logged In Successfully!'
-            ];
-            header("HTTP/1.0 200 Logged In Successfully!");
-            echo json_encode($data);
+            $password_unhashed = password_verify($password, $emailResult['password']);
 
-            $checkData = null;
-            exit();
+            if(!$password_unhashed) {
+
+                $data = [
+                    'status' => 401,
+                    'message' => 'Wrong Credentials'
+                ];
+                header("HTTP/1.0 401 Wrong Credentials");
+                echo json_encode($data);
+                exit();
+
+            } else {
+
+                $checkData = $this->connect()->prepare("SELECT * FROM users WHERE users.email = ? AND users.password = ?");
+                $checkData->execute([$email, $emailResult['password']]);
+                $datas = $checkData->fetch();
+    
+                if(!$datas) {
+                    
+                    $data = [
+                        'status' => 401,
+                        'message' => 'Wrong Credentials'
+                    ];
+                    header("HTTP/1.0 401 Wrong Credentials");
+                    echo json_encode($data);
+                    exit();
+    
+                }
+    
+                $payload = [
+                    'iss' => 'localhost',
+                    'user_data' => [
+                        'name' => $datas['name'],
+                        'email' => $datas['email']
+                    ]
+                ];
+    
+                $access_token = JWT::encode($payload, $datas['secret_key'], 'HS256');
+    
+                $data = [
+                    'status' => 200,
+                    'message' => 'Logged In Successfully!',
+                    'access_token' => $access_token
+                ];
+                header("HTTP/1.0 200 Logged In Successfully!");
+                echo json_encode($data);
+    
+                $checkData = null;
+                exit();
+            }
 
         }
 
