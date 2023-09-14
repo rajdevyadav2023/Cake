@@ -1,11 +1,11 @@
-import c1 from '../img/c-01.png';
-import c2 from '../img/c-02.png';
-import c3 from '../img/c-03.png';
-import c4 from '../img/c-04.png';
-import c5 from '../img/c-05.png';
-import c6 from '../img/c-06.png';
-import c7 from '../img/c-07.png';
-import c8 from '../img/c-08.png';
+import c1 from '../img/c-01.webp';
+import c2 from '../img/c-02.webp';
+import c3 from '../img/c-03.webp';
+import c4 from '../img/c-04.webp';
+import c5 from '../img/c-05.webp';
+import c6 from '../img/c-06.webp';
+import c7 from '../img/c-07.webp';
+import c8 from '../img/c-08.webp';
 export const popularCakes = [
     {
         img:c1,

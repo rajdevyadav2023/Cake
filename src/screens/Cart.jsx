@@ -6,7 +6,7 @@ import { removeFromCart } from '../redux/userSlice';
 // css 
 import '../css/cart.css';
 // images 
-import empty from '../img/empty.gif';
+import empty from '../img/empty.webp';
 
 
 

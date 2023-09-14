@@ -1,11 +1,11 @@
-import w1 from '../img/w-01.png';
-import w2 from '../img/w-02.png';
-import w3 from '../img/w-03.png';
-import w4 from '../img/w-04.png';
-import w5 from '../img/w-05.png';
-import w6 from '../img/w-06.png';
-import w7 from '../img/w-07.png';
-import w8 from '../img/w-08.png';
+import w1 from '../img/w-01.webp';
+import w2 from '../img/w-02.webp';
+import w3 from '../img/w-03.webp';
+import w4 from '../img/w-04.webp';
+import w5 from '../img/w-05.webp';
+import w6 from '../img/w-06.webp';
+import w7 from '../img/w-07.webp';
+import w8 from '../img/w-08.webp';
 
 export const weddingCakes = [
     {
