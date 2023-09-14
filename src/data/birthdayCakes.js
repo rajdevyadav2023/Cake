@@ -1,11 +1,11 @@
-import b1 from '../img/b-01.png';
-import b2 from '../img/b-02.png';
-import b3 from '../img/b-03.png';
-import b4 from '../img/b-04.png';
-import b5 from '../img/b-05.png';
-import b6 from '../img/b-06.png';
-import b7 from '../img/b-07.png';
-import b8 from '../img/b-08.png';
+import b1 from '../img/b-01.webp';
+import b2 from '../img/b-02.webp';
+import b3 from '../img/b-03.webp';
+import b4 from '../img/b-04.webp';
+import b5 from '../img/b-05.webp';
+import b6 from '../img/b-06.webp';
+import b7 from '../img/b-07.webp';
+import b8 from '../img/b-08.webp';
 
 export const birthdayCakes = [
     {

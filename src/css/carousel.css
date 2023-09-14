@@ -11,22 +11,22 @@
 position: relative;
   }
 .embla__slide_1{
-    background: url('../img/bg-01.jpg');
+    background: url('../img/bg-01.webp');
     background-size: cover;
     background-position: center;
 }  
 .embla__slide_2{
-    background: url('../img/bg-02.jpg');
+    background: url('../img/bg-02.webp');
     background-size: cover;
     background-position: center;
 }  
 .embla__slide_3{
-    background: url('../img/bg-03.jpg');
+    background: url('../img/bg-03.webp');
     background-size: cover;
     /* background-position: center; */
 }  
 .embla__slide_4{
-    background: url('../img/bg-04.jpg');
+    background: url('../img/bg-04.webp');
     background-size: cover;
     background-position: center;
 }  

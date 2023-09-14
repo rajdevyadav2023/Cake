@@ -1,4 +1,4 @@
-import logo from '../img/logo.png';
+import logo from '../img/logo.webp';
 import '../css/header.css'
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
