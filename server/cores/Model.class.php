@@ -38,6 +38,7 @@ use Firebase\JWT\JWT;
                 $payload = [
                     'iss' => 'localhost',
                     'user_data' => [
+                        'user_id' => $user_id,
                         'name' => $name,
                         'email' => $email
                     ]
@@ -108,6 +109,7 @@ use Firebase\JWT\JWT;
                 $payload = [
                     'iss' => 'localhost',
                     'user_data' => [
+                        'user_id' => $data['user_id'],
                         'name' => $datas['name'],
                         'email' => $datas['email']
                     ]
