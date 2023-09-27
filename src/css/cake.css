@@ -1,0 +1,37 @@
+.cake-img {
+    height: 30vh;
+    background-color: #f1f1ff;
+    width: 70%;
+    margin: 1rem auto;
+    cursor: pointer;
+
+}
+
+.cake-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.cake-details {
+    text-align: center;
+    color: #692f2f;
+}
+
+.cake-details button {
+    width: 80%;
+    height: 45px;
+    cursor: pointer;
+    background-color: #692f2f;
+    color: #fff;
+    border: none;
+    outline: none;
+    margin-top: .5rem;
+    transition: all .5s ease;
+    border-radius: 5px;
+}
+
+.cake-details button:hover {
+    background-color: #4c1e1e;
+
+}
